@@ -1,7 +1,7 @@
 ### Sample of Contract Testing message-queue-based service (sampleHandler)
 
 Generate/update the contract: 
-go test -run Test_generateContract
+go test -run Test_genCon
 
 Validate the contract:
 go test -run Test_verifyContract
