@@ -1,0 +1,29 @@
+{
+  "consumer": {
+    "name": "Sample Consumer"
+  },
+  "provider": {
+    "name": "Sample Handler"
+  },
+  "messages": [
+    {
+      "description": "expected to receive no error",
+      "providerStates": [
+        {
+          "name": "given a SQS message",
+          "params": null
+        }
+      ],
+      "contents": {
+        "sqsData": "sample data"
+      },
+      "matchingRules": {
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
