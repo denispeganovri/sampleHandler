@@ -37,7 +37,7 @@ func Test_verifyContract(t *testing.T) {
 
 	// Verify the Provider with local Pact Files
 	_, err := pact.VerifyMessageProvider(t, dsl.VerifyMessageRequest{
-		PactURLs:        []string{filepath.ToSlash("./pacts/client-server.json")},
+		PactURLs:        []string{"./pacts/sample_consumer-sample_handler.json"},
 		MessageHandlers: functionMappings,
 		StateHandlers:   stateMappings,
 		PactLogDir:      filepath.ToSlash("./logs"),
