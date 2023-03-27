@@ -40,11 +40,15 @@ func Test_verifyContract(t *testing.T) {
 
 	// Verify the Provider with local Pact Files
 	_, err := pact.VerifyMessageProvider(t, dsl.VerifyMessageRequest{
-		PactURLs:        []string{"./pacts/sample_consumer-sample_handler.json"},
-		MessageHandlers: functionMappings,
-		StateHandlers:   stateMappings,
-		PactLogDir:      filepath.ToSlash("./logs"),
-		PactLogLevel:    "DEBUG",
+		//PactURLs:        []string{"./pacts/sample_consumer-sample_handler.json"},
+		BrokerURL:                  "https://pen.pactflow.io", //link to your remote Contract broker
+		BrokerToken:                "jEQnxw7xWgYRv-3-G7Cx-g",  //your PactFlow token
+		PublishVerificationResults: true,
+		ProviderVersion:            "10.0.2",
+		MessageHandlers:            functionMappings,
+		StateHandlers:              stateMappings,
+		PactLogDir:                 filepath.ToSlash("./logs"),
+		PactLogLevel:               "DEBUG",
 	})
 	if err != nil {
 		return
