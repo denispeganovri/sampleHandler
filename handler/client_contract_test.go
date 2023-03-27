@@ -32,7 +32,7 @@ func createPact() dsl.Pact {
 }
 
 func Test_genCon(t *testing.T) {
-	eventMessage := SQSEvent{SqsData: "sample data"}
+	eventMessage := SQSEvent{SqsData: "sample SQS data"}
 
 	tc := testCase{
 		desc:             "test case description",

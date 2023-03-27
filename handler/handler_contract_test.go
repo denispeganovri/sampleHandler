@@ -14,7 +14,8 @@ func Test_verifyContract(t *testing.T) {
 
 	// Map test descriptions to message producer (handlers)
 	functionMappings := dsl.MessageHandlers{
-		"received data": func(m dsl.Message) (interface{}, error) {
+		//Description (ExpectedToReceive)
+		"expected to receive no error": func(m dsl.Message) (interface{}, error) {
 			if data != nil {
 				return data, nil
 			} else {
@@ -26,9 +27,11 @@ func Test_verifyContract(t *testing.T) {
 	}
 
 	stateMappings := dsl.StateHandlers{
-		"data exists": func(s dsl.State) error {
+		//Provider state (Given)
+		"given a SQS message": func(s dsl.State) error {
+			//Content and Type
 			data = &SQSEvent{
-				SqsData: "12341234",
+				SqsData: "sample SQS data",
 			}
 
 			return nil

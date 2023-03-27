@@ -15,7 +15,7 @@
         }
       ],
       "contents": {
-        "sqsData": "sample data"
+        "sqsData": "sample SQS data"
       },
       "matchingRules": {
       }

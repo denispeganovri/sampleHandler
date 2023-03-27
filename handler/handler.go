@@ -10,7 +10,7 @@ type Handler struct {
 }
 
 type SQSEvent struct {
-	SqsData string `json:"sqsData" pact:"exampleSQS=27"`
+	SqsData string `json:"sqsData" pact:"exampleSQS"`
 }
 
 func NewHandler() *Handler {
